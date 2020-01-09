@@ -11,7 +11,7 @@
 
     <!-- TinyMCE -->
     <script src="https://cdn.tiny.cloud/1/<?php echo e(config('app.tinymce_apikey', 'noapikey')); ?>/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>//tinymce.init({selector:'textarea'});</script>
+    <script>tinymce.init({selector:'textarea'});</script>
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>

@@ -96,9 +96,13 @@ class PagesController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
+    public function edit($alias)
     {
-        //
+        //get the post by alias
+       $page = $this->getPageByAlias($alias);
+
+       // send data and render view
+       return view('pages.edit', compact('page', 'alias'));
     }
 
     /**
@@ -110,7 +114,33 @@ class PagesController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        //
+        //get the post by alias
+        $post = $this->getPostByAlias($alias);
+
+        //authorize user to only edit own posts
+        $this->authorize('update', $post);
+
+        // Validate data passed through the form
+        $data = request()->validate([
+            'title' => 'required',
+            'alias' => 'required',
+            'content' => 'required',
+            'image' => '',
+        ]);
+
+        if(request('image')) {
+    		// Resize the image from the post request
+            $imagePath = request('image')->store('uploads', 'public');
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(800, 450);
+			$image->save();
+			
+			// Setting the image array
+			$imgArray = ['image' => $imagePath];
+        }
+        
+        $post->update(array_merge($data, $imgArray ?? []));
+
+        return redirect('/page');
     }
 
     /**
