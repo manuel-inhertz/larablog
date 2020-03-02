@@ -10,7 +10,7 @@
             <a class="nav-link text-white" href="{{route('page.index')}}">Pages</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="/users">Users</a>
+            <a class="nav-link text-white" href="{{route('user.index')}}">Users</a>
         </li>
     </ul>
 </aside>

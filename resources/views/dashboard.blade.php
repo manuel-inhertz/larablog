@@ -33,6 +33,7 @@
                             </form>
                         </div>
                         <div class="posts-listing mt-3">
+                            {{-- REACT <div id="posts-container"></div> --}}
                             <div class="row">
                                 @foreach ($posts as $post)
                                 <div class="col-md-12">

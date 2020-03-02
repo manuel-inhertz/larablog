@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Create Post') }}</div>
 
@@ -37,9 +37,11 @@
                         <div class="form-row">
                             <div class="form-group col-lg-12">
                                     <label for="content" class="">{{ __('Content') }}</label>
-                                    <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" style="height: 250px;">
+                                   {{-- <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" style="height: 250px;">
                                             {{ old('content') }}    
-                                    </textarea>
+                                    </textarea> --}}
+
+                                    <div id="flexible-content"></div>
         
                                     @error('content')
                                         <span class="invalid-feedback" role="alert">

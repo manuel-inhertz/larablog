@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
        @include('layouts/sidebar')
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-dark text-white  d-flex justify-content-between align-items-baseline">
                     <span>Posts</span>
@@ -17,7 +17,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    
+                    {{-- REACT <div id="posts-container"></div> --}}
+                    
                     <div class="row">
                         
                         @foreach ($posts as $post)
@@ -38,7 +40,7 @@
                                 </div>
                             </div> 
                         </div>    
-                        @endforeach
+                        @endforeach 
                        
                     </div>
                     

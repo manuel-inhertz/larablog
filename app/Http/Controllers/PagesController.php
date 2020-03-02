@@ -112,13 +112,13 @@ class PagesController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update($alias)
     {
         //get the post by alias
-        $post = $this->getPostByAlias($alias);
+        $page = $this->getPostByAlias($alias);
 
         //authorize user to only edit own posts
-        $this->authorize('update', $post);
+        $this->authorize('update', $page);
 
         // Validate data passed through the form
         $data = request()->validate([
@@ -138,7 +138,7 @@ class PagesController extends Controller
 			$imgArray = ['image' => $imagePath];
         }
         
-        $post->update(array_merge($data, $imgArray ?? []));
+        $page->update(array_merge($data, $imgArray ?? []));
 
         return redirect('/page');
     }
