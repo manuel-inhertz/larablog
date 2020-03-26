@@ -16,7 +16,7 @@
         <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="position-ref full-height">
             <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="<?php echo e(url('/')); ?>">

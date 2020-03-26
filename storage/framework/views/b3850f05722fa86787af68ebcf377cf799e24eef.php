@@ -4,7 +4,7 @@
         <?php echo $__env->make('layouts/sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="col-md-9">
             <div class="card">
-                <div class="card-header bg-dark text-white">Dashboard</div>
+                <div class="card-header bg-dark text-white  d-flex justify-content-between align-items-baseline">Dashboard</div>
 
                 <div class="card-body">
                     <?php if(session('status')): ?>
@@ -28,7 +28,7 @@
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary mb-2">Filter</button>
+                                <button type="submit" class="btn btn-primary mb-2 btn-sm">Filter</button>
                             </form>
                         </div>
                         <div class="posts-listing mt-3">

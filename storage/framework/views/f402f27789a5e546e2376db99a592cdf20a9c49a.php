@@ -13,4 +13,5 @@
             <a class="nav-link text-white" href="<?php echo e(route('user.index')); ?>">Users</a>
         </li>
     </ul>
-</aside><?php /**PATH /Users/manuel/MEGA/bizen.local/repos/larablog/resources/views/layouts/sidebar.blade.php ENDPATH**/ ?>
+</aside>
+<?php /**PATH /Users/manuel/MEGA/bizen.local/repos/larablog/resources/views/layouts/sidebar.blade.php ENDPATH**/ ?>

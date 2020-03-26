@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
-    <div class="row">
+    <div class="row no-gutters">
        <?php echo $__env->make('layouts/sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="col-md-9">
             <div class="card">

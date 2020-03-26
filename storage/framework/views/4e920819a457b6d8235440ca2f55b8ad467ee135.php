@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
        <?php echo $__env->make('layouts/sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        <div class="col-md-12">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header bg-dark text-white  d-flex justify-content-between align-items-baseline">
                     <span>Posts</span>
