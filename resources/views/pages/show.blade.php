@@ -9,7 +9,7 @@
        </div>
    </div>
    <div class="post-content py-4">
-        {!! $page->content !!}
+        {!! $page->getContent() !!}
    </div>
 </div>
 @endsection

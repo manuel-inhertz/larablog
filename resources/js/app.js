@@ -62,7 +62,7 @@ $(document).ready(function(){
         } 
     });
 
-    $('.posts-listing .card .btn-danger').click(function(e){
+    $('.card .btn-danger').click(function(e){
         e.preventDefault();
         let el = $(this);
         let action = el.data('action');

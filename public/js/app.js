@@ -65765,7 +65765,7 @@ $(document).ready(function () {
       reader.readAsDataURL(input[0].files[0]);
     }
   });
-  $('.posts-listing .card .btn-danger').click(function (e) {
+  $('.card .btn-danger').click(function (e) {
     e.preventDefault();
     var el = $(this);
     var action = el.data('action');
@@ -65886,17 +65886,16 @@ var FlexibleContent = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(FlexibleContent).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "handleEditorChange", function (e) {//this.setState((prevState, props) => ({
-      //
-      // }));
+    _defineProperty(_assertThisInitialized(_this), "getContent", function (content) {
+      try {
+        return JSON.parse(content);
+      } catch (err) {
+        return {};
+      }
     });
 
     _this.state = {
-      content: {
-        "time": new Date().getTime(),
-        "blocks": [],
-        "version": "2.12.4"
-      }
+      content: _this.getContent(_this.props.content)
     };
     return _this;
   }
@@ -65946,9 +65945,10 @@ var FlexibleContent = /*#__PURE__*/function (_React$Component) {
 /* harmony default export */ __webpack_exports__["default"] = (FlexibleContent);
 
 if (document.getElementById('flexible-content')) {
-  var atts = document.getElementById('flexible-content').attributes;
-  console.log(atts);
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FlexibleContent, null), document.getElementById('flexible-content'));
+  var content = document.getElementById("flexible-content").getAttribute("data-content");
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FlexibleContent, {
+    content: content
+  }), document.getElementById('flexible-content'));
 }
 
 /***/ }),
@@ -66123,8 +66123,8 @@ if (document.getElementById('posts-container')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/manuel/MEGA/bizen.local/repos/larablog/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/manuel/MEGA/bizen.local/repos/larablog/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/manuelinhertz/MEGA/repos/larablog/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/manuelinhertz/MEGA/repos/larablog/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

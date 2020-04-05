@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/storage/app/public/uploads/*
+/database/*.sqlite
 /storage/*.key
 /vendor
 .env

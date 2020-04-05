@@ -9,10 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- TinyMCE -->
-    <script src="https://cdn.tiny.cloud/1/{{config('app.tinymce_apikey', 'noapikey')}}/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    {{--<script>tinymce.init({selector:'textarea'});</script>--}}
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -41,6 +37,13 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        @if (Route::current()->getName() == 'post.show')
+                            @can('update', $post)
+                                <li class="nav-item">
+                                    <a href="{{route('post.edit', $post->alias)}}" class="nav-link">Edit Post</a>
+                                </li>  
+                            @endcan
+                        @endif
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -78,6 +81,10 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer class="bg-dark text-white text-center py-3">
+            Copyright {{date("Y")}} - {{ config('app.name', 'Laravel') }}
+        </footer>
     </div>
 </body>
 </html>

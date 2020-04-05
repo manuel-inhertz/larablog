@@ -37,9 +37,10 @@
                         <div class="form-row">
                             <div class="form-group col-lg-12">
                                     <label for="content" class="">{{ __('Content') }}</label>
-                                    <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" style="height: 250px;" required>
+                                    {{--<textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" style="height: 250px;" required>
                                         {{ old('content') ?? $post->content }}   
-                                    </textarea>
+                                    </textarea>--}}
+                                    <div id="flexible-content" data-content="{{ old('content') ?? $post->content }}"></div>
         
                                     @error('content')
                                         <span class="invalid-feedback" role="alert">

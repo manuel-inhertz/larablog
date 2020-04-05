@@ -10,18 +10,16 @@ class FlexibleContent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-           content: {
-                "time" : new Date().getTime(),
-                "blocks" : [],
-                "version" : "2.12.4"
-            }
+           content: this.getContent(this.props.content)
         };
     }
 
-    handleEditorChange = (e) => {
-        //this.setState((prevState, props) => ({
-            //
-       // }));
+    getContent = (content) => {
+        try {
+            return JSON.parse(content);
+        } catch (err) {
+            return {};
+        }
     }
 
 
@@ -54,7 +52,8 @@ class FlexibleContent extends React.Component {
 export default FlexibleContent;
 
 if (document.getElementById('flexible-content')) {
-    const atts = document.getElementById('flexible-content').attributes;
-    console.log(atts);
-    ReactDOM.render(<FlexibleContent />, document.getElementById('flexible-content'));
+    const content = document
+      .getElementById("flexible-content")
+      .getAttribute("data-content");
+    ReactDOM.render(<FlexibleContent content={content} />, document.getElementById('flexible-content'));
 }
