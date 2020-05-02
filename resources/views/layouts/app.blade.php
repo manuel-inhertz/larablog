@@ -37,13 +37,16 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        @if (Route::current()->getName() == 'post.show')
-                            @can('update', $post)
-                                <li class="nav-item">
-                                    <a href="{{route('post.edit', $post->alias)}}" class="nav-link">Edit Post</a>
-                                </li>  
-                            @endcan
-                        @endif
+                        @can('update', $post ?? '')
+                            <li class="nav-item">
+                                <a href="{{route('post.edit', $post ?? ''->alias)}}" class="nav-link">Edit Post</a>
+                            </li>  
+                        @endcan
+                        @can('update', $page ?? '')
+                            <li class="nav-item">
+                                <a href="{{route('page.edit', $page->alias)}}" class="nav-link">Edit Page</a>
+                            </li>  
+                        @endcan
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

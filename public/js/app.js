@@ -66123,8 +66123,8 @@ if (document.getElementById('posts-container')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/manuelinhertz/MEGA/repos/larablog/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/manuelinhertz/MEGA/repos/larablog/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Volumes/DATA 128/MEGA/repos/BlocksCMS/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Volumes/DATA 128/MEGA/repos/BlocksCMS/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

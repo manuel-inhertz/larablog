@@ -115,7 +115,7 @@ class PagesController extends Controller
     public function update($alias)
     {
         //get the post by alias
-        $page = $this->getPostByAlias($alias);
+        $page = $this->getPageByAlias($alias);
 
         //authorize user to only edit own posts
         $this->authorize('update', $page);
